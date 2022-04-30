@@ -3,7 +3,7 @@ import React from 'react'
 import '@fontsource/poppins/600.css'
 const Navbar = () => {
   return (
-    <Flex justifyContent='space-between' alignItems='center' px ='100px' w='100%' bgColor='#121829CC' h='80px'>
+    <Flex justifyContent='space-between' alignItems='center' px ='80px' w='100%' bgColor='#121829CC' h='80px'>
       <Box>
         <Image src='logo.svg'/>
       </Box>

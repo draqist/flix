@@ -4,7 +4,7 @@ import { RiSearch2Line } from 'react-icons/ri'
 const Hero = () => {
   return (
     <Box w='500px' mt='80px' pb='20px' >
-      <Heading color='#EBEEF5' fontWeight='600' fontSize='64px'> ChillFlix</Heading>
+      <Heading color='#EBEEF5' fontWeight='600' fontSize='64px'> Flix</Heading>
       <Text fontSize='16px' fontWeight='400' color='#8E95A9'> A web app where you can search for info about your favorite movies, tv shows and actors 😉. If there's a particular movie that you can't find, shoot me a <Text as='span' color='#9C92F8'>mail</Text> </Text>
       <InputGroup mt='24px'  >
         <InputLeftElement
