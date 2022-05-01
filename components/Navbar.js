@@ -1,47 +1,65 @@
-import { Box, Button, Flex, Image, Heading  } from '@chakra-ui/react'
+import { Box, Button, Flex, Image, Heading } from '@chakra-ui/react'
+import  Link  from 'next/link'
 import React from 'react'
 import '@fontsource/poppins/600.css'
+import {IoMenu} from 'react-icons/io5'
+
 const Navbar = () => {
   return (
-    <Flex justifyContent='space-between' alignItems='center' px ='80px' w='100%' bgColor='#121829CC' h='80px'>
-      <Box>
+    <Flex justifyContent='space-between' alignItems='center' px={['20px','20px','70px']} w='100%' bgColor='#121829CC' h='80px'>
+      <Box as ='a' href='/'>
         <Image src='logo.svg'/>
       </Box>
-      <Flex w='424px' justifyContent='space-between' alignItems='center'>
+      <Flex w='424px' d={['none', 'none', 'flex']} justifyContent='space-between' alignItems='center'>
         <Box
           px='8px'
-          as='button'
+          as='a'
+          cursor='pointer'
           variant='ghost'
           _hover={{
             bg: 'transparent',
-            borderBottom: '2px solid green',
-          }}
-          >
-          <Heading color ='#A8AEBF' fontSize='16px' fontWeight='600'>Movies</Heading>
-        </Box>
-        <Box
-          as='button'
-          px='8px'
-          variant='ghost'
-          _hover={{
-            bg: 'transparent',
-            borderBottom: '2px solid green',
+            pb:'4px',
+            borderBottom: '2px solid #323B54',
           }}
         >
-          <Heading color ='#A8AEBF' fontSize='16px' fontWeight='600'>TV Shows</Heading>
+          <Link href ='/movies'>
+            <Heading color ='#A8AEBF' fontSize='16px' fontWeight='600'>Movies</Heading>
+          </Link>
         </Box>
         <Box
-          as='button'
+          as='a'
+          cursor='pointer'
           px='8px'
           variant='ghost'
           _hover={{
             bg: 'transparent',
-            borderBottom: '2px solid green',
+            pb:'4px',
+            borderBottom: '2px solid #323B54',
           }}
         >
-          <Heading color ='#A8AEBF' fontSize='16px' fontWeight='600'>Actors</Heading>
+          <Link href='/shows'>
+            <Heading color ='#A8AEBF' fontSize='16px' fontWeight='600'>TV Shows</Heading>
+          </Link>
+        </Box>
+        <Box
+          as='a'
+          cursor='pointer'
+          px='8px'
+          variant='ghost'
+          _hover={{
+            bg: 'transparent',
+            pb:'4px',
+            borderBottom: '2px solid #323B54',
+          }}
+        >
+          <Link href='/actors'>
+            <Heading color ='#A8AEBF' fontSize='16px' fontWeight='600'>Actors</Heading>
+          </Link>
         </Box>
       </Flex>
+      <Box d={['block', 'block', 'none']}>
+        <IoMenu fontSize={'36px'} color='#A8AEBF'/>
+      </Box>
     </Flex >
   )
 }
