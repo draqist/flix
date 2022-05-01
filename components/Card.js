@@ -19,7 +19,7 @@ const Card = ({poster, title, rating}) => {
             <TagLabel  > {rating}</TagLabel>
           </Tag>
         </Box>
-        <Image alt='some image' as={motion.img} whileHover={{scale:1.05,  overflow: 'hidden'}} borderRadius='8px' src={ `https://image.tmdb.org/t/p/w500/${poster}`}/>
+        <Image alt={title} as={motion.img} whileHover={{scale:1.05,  overflow: 'hidden'}} borderRadius='8px' src={ `https://image.tmdb.org/t/p/w500/${poster}`}/>
       </Box>
       <Text fontSize='16px' mt='16px' pl='10px' fontWeight='600' color='#EBEEF5'> {title} </Text>
     </Box>
