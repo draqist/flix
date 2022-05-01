@@ -5,7 +5,7 @@ import {
 } from '@chakra-ui/react';
 import { RiSearch2Line } from 'react-icons/ri';
 import Navbar from '../../components/Navbar';
-//import Axios from 'axios';
+import Axios from 'axios';
 import Card from '../../components/Card';
 
 
@@ -48,7 +48,7 @@ export default function Shows({Data}) {
 
 
 export async function getStaticProps() {
-  const mov = await fetch(`https://api.themoviedb.org/3/person/popular?api_key=${process.env.PRIVATE_KEY}&language=en-US&page=1`)
+  const mov = await Axios.get(`https://api.themoviedb.org/3/person/popular?api_key=${process.env.PRIVATE_KEY}&language=en-US&page=1`)
   const response = await mov.data.results
 
   return{
