@@ -13,7 +13,7 @@ export default function Shows({Data}) {
   return (
     <Box bgImage='url("Background.svg")' w='100%' bgColor='#121829'>
       <Navbar />
-      <Box px='70px' mt='80px'>
+      <Box px={['20px','20px','70px']} mt='80px'>
         <Text fontSize='16px' color='#BEB7FB'>Flix</Text>
         <Heading fontSize='64px' fontWeight='600' color='#EBEEF5'>  TV Shows </Heading>
 
@@ -32,7 +32,7 @@ export default function Shows({Data}) {
               color='white' h='64px' placeholder='Search Movies or TV Shows' fontSize='20px' fontWeight='' borderColor='#323B54' />
           </InputGroup>
       </Box>
-      <Box px='70px' w='100%' mt='48px' pb='28px'>
+      <Box px={['20px','20px','70px']} w='100%' mt='48px' pb='28px'>
       <Flex justifyContent='space-between' alignItems='center'>
           <Text fontSize='24px' color='#ebeef5' fontWeight='600'> Popular Actors </Text>
           <Text  fontSize='18px' color='#9C92F8'> { `(${Data.length}) Actors`}</Text>
