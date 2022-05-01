@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Image, Heading } from '@chakra-ui/react'
+import { Box, Flex, Image, Heading } from '@chakra-ui/react'
 import  Link  from 'next/link'
 import React from 'react'
 import '@fontsource/poppins/600.css'

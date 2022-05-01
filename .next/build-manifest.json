@@ -30,11 +30,6 @@
       "static/chunks/main.js",
       "static/chunks/pages/actors.js"
     ],
-    "/movies": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/movies.js"
-    ],
     "/shows": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",

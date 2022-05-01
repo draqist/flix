@@ -1,11 +1,8 @@
-import { Box, CircularProgress, Flex, Tab, TabList, TabPanel, TabPanels, Tabs, Text } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
+import { Box, Flex, Tab, TabList, TabPanel, TabPanels, Tabs, Text } from "@chakra-ui/react";
 import Card from "../components/Card";
 import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
 import Axios from 'axios'
-import { MovieDataFetcher } from "../utils/apicalls";
-
 
 
 

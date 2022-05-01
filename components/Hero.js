@@ -1,4 +1,4 @@
-import { Box,Heading, Input, useDisclosure, InputGroup, InputLeftElement, Text, Modal, ModalOverlay, ModalContent, ModalBody, Button, Flex, ModalHeader, ModalCloseButton, ModalFooter } from '@chakra-ui/react'
+import { Box,Heading, Input, useDisclosure, InputGroup, InputLeftElement, Text, Modal, ModalOverlay, ModalContent, ModalBody,  ModalHeader, ModalFooter } from '@chakra-ui/react'
 import { RiSearch2Line } from 'react-icons/ri'
 
 const Hero = () => {
