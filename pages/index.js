@@ -2,7 +2,7 @@ import { Box, Flex, Tab, TabList, TabPanel, TabPanels, Tabs, Text } from '@chakr
 import Card from "../components/Card";
 import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
-import Axios from 'axios'
+//import Axios from 'axios'
 
 
 
@@ -95,9 +95,9 @@ export default function Home({ movieData, showsData, allData }) {
 }
 
 export async function getStaticProps() {
-  const movresult = await Axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.PRIVATE_KEY}&language=en-US&page=1`)
+  const movresult = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.PRIVATE_KEY}&language=en-US&page=1`)
 
-  const shows = await Axios.get(`https://api.themoviedb.org/3/tv/popular?api_key=${process.env.PRIVATE_KEY}&language=en-US&page=1`)
+  const shows = await fetch(`https://api.themoviedb.org/3/tv/popular?api_key=${process.env.PRIVATE_KEY}&language=en-US&page=1`)
   const showsres = await shows.data.results
   const res = await movresult.data.results
   let combinedRes = []
