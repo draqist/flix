@@ -71,7 +71,7 @@ export default function Home({ movieData, showsData, allData }) {
               </Flex>
             </TabPanel>
             <TabPanel>
-              <Text fontSize='20px' color='#A8AEBF' mt='1rem'> All {`(${movieData.length})`}</Text>
+              <Text fontSize='20px' color='#A8AEBF' mt='1rem'> Movies {`(${movieData.length})`}</Text>
             <Flex wrap='wrap' justifyContent={['center','center','space-between']} alignItems='center'>
               {
                   movieData.map((movie) => <Card key={movie.id.toString()} poster={movie.poster_path} rating= {movie.vote_average} title={ movie.title || movie.name }/>)
@@ -79,7 +79,7 @@ export default function Home({ movieData, showsData, allData }) {
               </Flex>
             </TabPanel>
             <TabPanel>
-              <Text fontSize='20px' color='#A8AEBF' mt='1rem'> All {`(${showsData.length})`}</Text>
+              <Text fontSize='20px' color='#A8AEBF' mt='1rem'> TV Shows {`(${showsData.length})`}</Text>
             <Flex wrap='wrap' justifyContent={['center','center','space-between']} alignItems='center'>
               {
                 showsData.map((show) => <Card key={show.id.toString()} rating= {show.vote_average} poster={show.poster_path} title={ show.title || show.name }/>)
