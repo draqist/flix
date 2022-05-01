@@ -7,7 +7,7 @@ const Card = ({poster, title, rating}) => {
   return (
     <Box as ={motion.div} initial={{ opacity: 0 }}
     whileInView={{ opacity: 1 }}
-    viewport={{ once: true }} transition ='1.5s linear' bgColor='#20283ECC'  borderRadius='12px' p='8px' h='480px' w='282px'  mt='24px'>
+    viewport={{ once: true }} transition ='1s linear' bgColor='#20283ECC'  borderRadius='12px' p='8px' h='480px' w='282px'  mt='24px'>
       <Box w='266px'  h='400px' borderRadius='8px'>
         <Box pos='absolute'>
           <Tag ml='10px' pos='relative' h='40px' top='10px' px='8px' fontWeight='400' bgColor='#000000A3'  color='#FFAD49' _hover={{

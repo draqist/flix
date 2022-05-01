@@ -46,7 +46,7 @@ export default function Movies ({Data}) {
 
 
 export async function getStaticProps() {
-  const mov = await Axios.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=98750334fac1aaa94aca2b7a98d59728&language=en-US&page=1`)
+  const mov = await Axios.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=${process.env.PRIVATE_KEY}&language=en-US&page=1`)
   const response = await mov.data.results
 
   return{

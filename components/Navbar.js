@@ -70,12 +70,16 @@ const Navbar = () => {
             icon = {<IoMenu fontSize='36px' color='#A8AEBF'/>}
           />
           <MenuList bgColor='#323B54' border='transparent' color='#9C92F8' zIndex='10'>
-            <MenuItem command='⌘T' as ='a' href='/' passHref>
-              Home
-            </MenuItem>
-            <MenuItem as ='a' href='/movies' passHref  command='⌘N'>
-              Movies
-            </MenuItem>
+            <Link as ='a' href='/' passHref>
+              <MenuItem command='⌘T' >
+                Home
+              </MenuItem>
+            </Link>
+            <Link as ='a' href='/movies' passHref  >
+              <MenuItem  command='⌘N'>
+                Movies
+              </MenuItem>
+            </Link>
             <MenuItem as ='a' href='/shows' passHref  command='⌘⇧N'>
               TV Shows
             </MenuItem>

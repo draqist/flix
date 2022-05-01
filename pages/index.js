@@ -95,9 +95,9 @@ export default function Home({ movieData, showsData, allData }) {
 }
 
 export async function getStaticProps() {
-  const movresult = await Axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=98750334fac1aaa94aca2b7a98d59728&language=en-US&page=1`)
+  const movresult = await Axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.PRIVATE_KEY}&language=en-US&page=1`)
 
-  const shows = await Axios.get(`https://api.themoviedb.org/3/tv/popular?api_key=98750334fac1aaa94aca2b7a98d59728&language=en-US&page=1`)
+  const shows = await Axios.get(`https://api.themoviedb.org/3/tv/popular?api_key=${process.env.PRIVATE_KEY}&language=en-US&page=1`)
   const showsres = await shows.data.results
   const res = await movresult.data.results
   let combinedRes = []
