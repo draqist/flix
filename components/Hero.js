@@ -5,7 +5,7 @@ import { RiSearch2Line } from 'react-icons/ri'
 const Hero = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   return (
-    <Box w={['','','500px']} mt='50px' pb='20px' >
+    <Box w={['','','500px']} pt={['80px','90px', '100px', '120px']} pb='20px' >
       <Heading color='#EBEEF5' fontWeight='600' fontSize='64px' textAlign={['justify', 'justify', 'left']}> Flix</Heading>
       <Text fontSize='16px' fontWeight='400' color='#8E95A9'> A web app where you can search for info about your favorite movies, tv shows and actors 😉. If there's a particular movie that you can't find, shoot me a <Text as='span' color='#9C92F8'>mail</Text> </Text>
         <Box as='button' variant='' px='10px' onClick={() => onOpen()} borderRadius='12px' d='flex'h='64px' w={['100%','100%','348px']} mt='24px' alignItems='center' justifyContent='unset' bg='#0000001A' border='1px solid #323B54'>

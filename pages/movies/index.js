@@ -10,7 +10,7 @@ export default function Movies ({Data}) {
   return (
     <Box bgImage='url("Background.svg")' w='100%' bgColor='#121829'>
       <Navbar />
-      <Box px={['20px','20px','70px']} mt='80px'>
+      <Box px={['20px','20px','70px']} pt='80px'>
         <Text fontSize='16px' color='#BEB7FB'>Flix</Text>
         <Heading fontSize='64px' fontWeight='600' color='#EBEEF5'>  Movies </Heading>
 
