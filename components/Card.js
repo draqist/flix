@@ -1,3 +1,4 @@
+/*eslint-disable react/no-children-prop, react/no-unescaped-entities */
 import { Box, Image, Tag, TagLabel, TagLeftIcon, Text, } from '@chakra-ui/react'
 import { AiOutlineStar } from 'react-icons/ai'
 import {motion} from 'framer-motion'
@@ -18,7 +19,7 @@ const Card = ({poster, title, rating}) => {
             <TagLabel  > {rating}</TagLabel>
           </Tag>
         </Box>
-        <Image as={motion.img} whileHover={{scale:1.05,  overflow: 'hidden'}} borderRadius='8px' src={ `https://image.tmdb.org/t/p/w500/${poster}` }/>
+        <Image alt='some image' as={motion.img} whileHover={{scale:1.05,  overflow: 'hidden'}} borderRadius='8px' src={ `https://image.tmdb.org/t/p/w500/${poster}`}/>
       </Box>
       <Text fontSize='16px' mt='16px' pl='10px' fontWeight='600' color='#EBEEF5'> {title} </Text>
     </Box>

@@ -1,3 +1,4 @@
+/*eslint-disable react/no-children-prop */
 import { Box, Flex, Heading, Input, InputGroup, InputLeftElement, Text } from "@chakra-ui/react"
 import { RiSearch2Line } from "react-icons/ri"
 import Navbar from "../../components/Navbar"

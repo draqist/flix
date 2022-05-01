@@ -1,3 +1,4 @@
+/*eslint-disable react/no-children-prop, react/no-unescaped-entities */
 import { Box, Flex, Image, Heading } from '@chakra-ui/react'
 import  Link  from 'next/link'
 import React from 'react'
@@ -8,7 +9,7 @@ const Navbar = () => {
   return (
     <Flex justifyContent='space-between' alignItems='center' px={['20px','20px','70px']} w='100%' bgColor='#121829CC' h='80px'>
       <Box as ='a' href='/'>
-        <Image src='logo.svg'/>
+        <Image alt='some image' src='logo.svg'/>
       </Box>
       <Flex w='424px' d={['none', 'none', 'flex']} justifyContent='space-between' alignItems='center'>
         <Box
@@ -22,7 +23,7 @@ const Navbar = () => {
             borderBottom: '2px solid #323B54',
           }}
         >
-          <Link href ='/movies'>
+          <Link passHref href ='/movies'>
             <Heading color ='#A8AEBF' fontSize='16px' fontWeight='600'>Movies</Heading>
           </Link>
         </Box>
@@ -37,7 +38,7 @@ const Navbar = () => {
             borderBottom: '2px solid #323B54',
           }}
         >
-          <Link href='/shows'>
+          <Link passHref href='/shows'>
             <Heading color ='#A8AEBF' fontSize='16px' fontWeight='600'>TV Shows</Heading>
           </Link>
         </Box>
@@ -52,7 +53,7 @@ const Navbar = () => {
             borderBottom: '2px solid #323B54',
           }}
         >
-          <Link href='/actors'>
+          <Link passHref href='/actors'>
             <Heading color ='#A8AEBF' fontSize='16px' fontWeight='600'>Actors</Heading>
           </Link>
         </Box>

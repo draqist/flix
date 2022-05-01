@@ -1,11 +1,15 @@
-import { Box, Flex, Heading, Input, InputGroup, InputLeftElement, Text } from "@chakra-ui/react"
-import { RiSearch2Line } from "react-icons/ri"
-import Navbar from "../../components/Navbar"
-import Axios from 'axios'
-import Card from "../../components/Card"
+/*eslint-disable react/no-children-prop */
+
+import {
+  Box, Flex, Heading, Input, InputGroup, InputLeftElement, Text
+} from '@chakra-ui/react';
+import { RiSearch2Line } from 'react-icons/ri';
+import Navbar from '../../components/Navbar';
+import Axios from 'axios';
+import Card from '../../components/Card';
 
 
-export default function Shows ({Data}) {
+export default function Shows({Data}) {
   return (
     <Box bgImage='url("Background.svg")' w='100%' bgColor='#121829'>
       <Navbar />
