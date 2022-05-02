@@ -3,6 +3,7 @@ import Card from "../components/Card";
 import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
 import Axios from 'axios'
+import Link from 'next/link';
 
 
 
@@ -75,7 +76,7 @@ export default function Home({ movieData, showsData, allData }) {
             <Flex wrap='wrap' justifyContent={['center','center','space-between']} alignItems='center'>
               {
                     movieData.map((movie) => (
-                      <Link href={'/movies/' + movie.title}>
+                      <Link key={movie.id.toString()} href={'/movies/' + movie.id} passHref>
                       <Card key={movie.id.toString()} poster={movie.poster_path} rating= {movie.vote_average} title={ movie.title || movie.name }/>    
                     </Link>
                     ))

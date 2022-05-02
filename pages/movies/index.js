@@ -38,7 +38,7 @@ export default function Movies ({Data}) {
         <Flex wrap={['wrap']} justifyContent={['center','center','space-between']} alignItems='center'>
           {
             Data.map((data) => (
-              <Link href={'/movies/' +data.id} passHref>
+              <Link key={data.id.toString()} href={'/movies/' +data.id} passHref>
                 <Card key={data.id.toString()} poster={data.poster_path} rating={data.vote_average} title={data.title || data.name} />
               </Link>
             ))}
