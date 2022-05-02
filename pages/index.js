@@ -74,7 +74,11 @@ export default function Home({ movieData, showsData, allData }) {
               <Text fontSize='20px' color='#A8AEBF' mt='1rem'> Movies {`(${movieData.length})`}</Text>
             <Flex wrap='wrap' justifyContent={['center','center','space-between']} alignItems='center'>
               {
-                  movieData.map((movie) => <Card key={movie.id.toString()} poster={movie.poster_path} rating= {movie.vote_average} title={ movie.title || movie.name }/>)
+                    movieData.map((movie) => (
+                      <Link href={'/movies/' + movie.title}>
+                      <Card key={movie.id.toString()} poster={movie.poster_path} rating= {movie.vote_average} title={ movie.title || movie.name }/>    
+                    </Link>
+                    ))
                 }
               </Flex>
             </TabPanel>

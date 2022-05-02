@@ -4,6 +4,7 @@ import { RiSearch2Line } from "react-icons/ri"
 import Navbar from "../../components/Navbar"
 import Axios from 'axios'
 import Card from "../../components/Card"
+import Link from "next/link";
 
 
 export default function Movies ({Data}) {
@@ -34,9 +35,13 @@ export default function Movies ({Data}) {
           <Text fontSize='24px' color='#ebeef5' fontWeight='600'> Now Playing</Text>
           <Text  fontSize='18px' color='#9C92F8'> { `(${Data.length}) Movies`}</Text>
         </Flex>
-        <Flex wrap='wrap' justifyContent={['center','center','space-between']} alignItems='center'>
+        <Flex wrap={['wrap']} justifyContent={['center','center','space-between']} alignItems='center'>
           {
-            Data.map((data) => <Card key={data.id.toString()} poster={data.poster_path} rating= {data.vote_average} title={ data.title || data.name }/>)}
+            Data.map((data) => (
+              <Link href={'/movies/' +data.id} passHref>
+                <Card key={data.id.toString()} poster={data.poster_path} rating={data.vote_average} title={data.title || data.name} />
+              </Link>
+            ))}
         </Flex>
       </Box>
     </Box>
