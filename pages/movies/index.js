@@ -1,10 +1,10 @@
 /*eslint-disable react/no-children-prop */
-import { Box, Flex, Heading, Input, InputGroup, InputLeftElement, Text } from "@chakra-ui/react"
+import { Box, Flex, Heading, Link, Input, InputGroup, InputLeftElement, Text } from "@chakra-ui/react"
 import { RiSearch2Line } from "react-icons/ri"
 import Navbar from "../../components/Navbar"
 import Axios from 'axios'
 import Card from "../../components/Card"
-import Link from "next/link";
+// import Link from "next/link";
 
 
 export default function Movies ({Data}) {

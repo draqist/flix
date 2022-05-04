@@ -11,7 +11,7 @@ const Details = ({ tagline, poster, overview, vote_average, release_date, type,g
           <Box w={['','','480px']}>
               <Heading fontSize='24px' fontWeight='700' letterSpacing='-1.5%' color='#EBEEF5' mb='24px'>{ tagline }</Heading>
             <Box h=''>
-              <Text fontSize='20px' color='#8E95A9' fontWeight='400'>{overview}</Text>
+              <Text fontSize={['14px','14px','20px']} color='#8E95A9' fontWeight='400'>{overview}</Text>
             </Box>
             <Tag h='40px' top='10px'
               px='8px'borderRadius='8px' mt='24px'fontWeight='400' bgColor='#000000A6' color='#FFAD49'

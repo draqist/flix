@@ -7,7 +7,7 @@ const Banner = ({ title, bck }) => {
   const router = useRouter()
   
   return ( 
-    <Box w='100%'h={['','','','','480px']} my='40px'>
+    <Box w='100%'h={['','','','','480px']} my={['20px','20px','40px']}>
           <Box overflow='hidden' zIndex='0'>
             <Image src={`https://image.tmdb.org/t/p/w1280/${bck}`} h={['','','','','480px']} w='100%' fit='cover' alt='' borderRadius={['24px','24px','40px']} />
           </Box>

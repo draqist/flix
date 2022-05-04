@@ -7,7 +7,7 @@ const Card = ({poster, title, rating}) => {
   return (
     <Box as ={motion.div} initial={{ opacity: 0 }}
     whileInView={{ opacity: 1 }}
-    viewport={{ once: true }} transition ='1s linear' bgColor='#20283ECC'  borderRadius='12px' p='8px' h='480px' w='282px'  mt='24px'>
+    viewport={{ once: true }} whileTap={{scale: 0.65}} transition ='1s linear' bgColor='#20283ECC'  borderRadius='12px' p='8px' h='480px' w='282px'  mt='24px'>
       <Box w='266px'  h='400px' borderRadius='8px'>
         <Box pos='absolute'>
           <Tag ml='10px' pos='relative' h='40px' top='10px' px='8px' fontWeight='400' bgColor='#000000A3'  color='#FFAD49' _hover={{
@@ -19,7 +19,7 @@ const Card = ({poster, title, rating}) => {
             <TagLabel  > {rating}</TagLabel>
           </Tag>
         </Box>
-        <Image alt={title} as={motion.img}  borderRadius='8px' src={ `https://image.tmdb.org/t/p/w500/${poster}`}/>
+        <Image alt={title} as={motion.img} whileHover={{scale:1.05,  overflow: 'hidden'}} borderRadius='8px' src={ `https://image.tmdb.org/t/p/w500/${poster}`}/>
       </Box>
       <Text fontSize='16px' mt='16px' pl='10px' fontWeight='600' color='#EBEEF5'> {title} </Text>
     </Box>

@@ -15,7 +15,7 @@ export default function Shows({Data}) {
       <Navbar />
       <Box px={['20px','20px','70px']} pt='80px'>
         <Text fontSize='16px' color='#BEB7FB'>Flix</Text>
-        <Heading fontSize='64px' fontWeight='600' color='#EBEEF5'>  TV Shows </Heading>
+        <Heading fontSize='64px' fontWeight='600' color='#EBEEF5'>  Actors </Heading>
 
         <InputGroup mt='24px' w='346px' >
           <InputLeftElement

@@ -1,9 +1,9 @@
-import { Box, Flex, Tab, TabList, TabPanel, TabPanels, Tabs, Text } from '@chakra-ui/react';
+import { Box, Flex, Tab, TabList, Link,TabPanel, TabPanels, Tabs, Text } from '@chakra-ui/react';
 import Card from "../components/Card";
 import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
 import Axios from 'axios'
-import Link from 'next/link';
+import NextLink from 'next/link';
 
 
 
@@ -27,7 +27,6 @@ export default function Home({ movieData, showsData, allData }) {
         <Box mt='60px' >
           <Tabs
             variant='unstyled'>
-
           <TabList bg='#00000033' justifyContent='space-between' borderRadius='12px' color='#8E95A9' w={['100%','100%','368px']} p='8px'>
               <Tab
                 w='85px'
@@ -76,9 +75,11 @@ export default function Home({ movieData, showsData, allData }) {
             <Flex wrap='wrap' justifyContent={['center','center','space-between']} alignItems='center'>
               {
                     movieData.map((movie) => (
-                      <Link key={movie.id.toString()} href={'/movies/' + movie.id} passHref>
-                      <Card key={movie.id.toString()} poster={movie.poster_path} rating= {movie.vote_average} title={ movie.title || movie.name }/>    
-                    </Link>
+                      <NextLink key={movie.id.toString()} href={`/movies/${movie.id}`} passHref>
+                        <Link>
+                          <Card key={movie.id.toString()} poster={movie.poster_path} rating= {movie.vote_average} title={ movie.title || movie.name }/>    
+                        </Link>
+                    </NextLink>
                     ))
                 }
               </Flex>
@@ -87,7 +88,13 @@ export default function Home({ movieData, showsData, allData }) {
               <Text fontSize='20px' color='#A8AEBF' mt='1rem'> TV Shows {`(${showsData.length})`}</Text>
             <Flex wrap='wrap' justifyContent={['center','center','space-between']} alignItems='center'>
               {
-                showsData.map((show) => <Card key={show.id.toString()} rating= {show.vote_average} poster={show.poster_path} title={ show.title || show.name }/>)
+                    showsData.map((show) => (
+                      <NextLink key={show.id.toString()} href={`/shows/${show.id}`} passHref>
+                        <Link >
+                          <Card key={show.id.toString()} rating={show.vote_average} poster={show.poster_path} title={show.title || show.name} />
+                        </Link>
+                      </NextLink>
+                    ))
                 }
               </Flex>
             </TabPanel>

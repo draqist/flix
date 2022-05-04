@@ -9,7 +9,7 @@ const MovieDetail = ({movDetail}) => {
     <Box bgColor='#121829' bgImage='url("Background.svg")'>
       <Navbar />
       <Box px={['20px', '20px', '70px']} pt='60px'>
-        <Box w='100%' h={['', '', '', '', '480px']} my='40px'>
+        <Box w='100%' h={['', '', '', '', '480px']} my={['20px','20px','40px']}>
           <Banner title={movDetail.original_title} bck={movDetail.backdrop_path} />
         </Box>
         <Details type='Movie' tagline={movDetail.tagline} poster={movDetail.poster_path} overview={movDetail.overview} vote_average={movDetail.vote_average} release_date={movDetail.release_date} genres={movDetail.genres} runtime={ movDetail.runtime}/>

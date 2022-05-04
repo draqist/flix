@@ -3,8 +3,9 @@ import  Axios  from "axios";
 import Banner from "../../components/Banner";
 import Details from "../../components/Details";
 import Navbar from "../../components/Navbar";
+import TvDetails from "../../components/TvDetails";
 
-const MovieDetail = ({showsDetail}) => {
+const ShowDetail = ({showsDetail}) => {
   return ( 
     <Box bgColor='#121829' bgImage='url("Background.svg")'>
       <Navbar />
@@ -12,13 +13,13 @@ const MovieDetail = ({showsDetail}) => {
         <Box w='100%' h={['', '', '', '', '480px']} my='40px'>
           <Banner title={showsDetail.original_name } bck={showsDetail.backdrop_path} />
         </Box>
-        <Details type ='TV Show' tagline={showsDetail.tagline} poster={showsDetail.poster_path} overview={showsDetail.overview} vote_average={showsDetail.vote_average} release_date={showsDetail.release_date} genres={showsDetail.genres} runtime={ showsDetail.runtime}/>
+        <TvDetails type='TV Show' tagline={showsDetail.tagline} poster={showsDetail.poster_path} overview={showsDetail.overview} vote_average={showsDetail.vote_average} release_date={showsDetail.first_air_date} lastdate={showsDetail.last_air_date} noSeasons={showsDetail.number_of_seasons} genres={showsDetail.genres} runtime={showsDetail.episode_run_time} status={showsDetail.status }/>
       </Box>
     </Box>
   );
 }
 
-export default MovieDetail;
+export default ShowDetail;
 
 export async function getStaticPaths() { 
   const muv = await Axios.get(`https://api.themoviedb.org/3/tv/on_the_air?api_key=${process.env.PRIVATE_KEY}&language=en-US&page=1`)
