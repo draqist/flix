@@ -4,8 +4,8 @@ import { AiOutlineStar } from "react-icons/ai";
 
 const Details = ({ tagline, poster, overview, vote_average, release_date, type,genres, runtime }) => {
   return ( 
-    <Flex alignItems='flex-start' pt={['0px','0px','20px','0px','120px']} pb='40px' direction={['column-reverse','column-reverse','unset']} px={['','','','0px','90px']} gap={['0','0','80px']}>
-          <Box w={['','','480px']} h={['','','720px']} mt={['20px','20px','0']}>
+    <Flex alignItems='flex-start' pt={['0px','0px','20px','0px','120px']} pb='40px' direction={['column-reverse','column-reverse','row']} px={['','','','0px','90px']} gap={['0','0','80px']}>
+          <Box w={['','','','','480px']} h={['','','','720px']} mt={['20px','20px','0']}>
             <Image src={'https://image.tmdb.org/t/p/w500/' + poster } alt='' borderRadius='24px' />
           </Box>
           <Box w={['','','480px']}>

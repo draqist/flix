@@ -1,7 +1,6 @@
 import { Box} from "@chakra-ui/react";
 import  Axios  from "axios";
 import Banner from "../../components/Banner";
-import Details from "../../components/Details";
 import Navbar from "../../components/Navbar";
 import TvDetails from "../../components/TvDetails";
 
