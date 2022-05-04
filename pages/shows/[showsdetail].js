@@ -22,26 +22,34 @@ const ShowDetail = ({showsDetail}) => {
 export default ShowDetail;
 
 export async function getStaticPaths() { 
-  const muv = await Axios.get(`https://api.themoviedb.org/3/tv/on_the_air?api_key=${process.env.PRIVATE_KEY}&language=en-US&page=1`)
-  const res = await muv.data.results
-
-  const moviePaths = res.map(movie => {
+  try { 
+    const muv = await Axios.get(`https://api.themoviedb.org/3/tv/on_the_air?api_key=${process.env.PRIVATE_KEY}&language=en-US&page=1`)
+    const res = await muv.data.results
+  
+    const moviePaths = res.map(movie => {
+      return {
+        params: {showsdetail: movie.id.toString()}
+      }
+    })
     return {
-      params: {showsdetail: movie.id.toString()}
+      paths: moviePaths,
+      fallback: false
     }
-  })
-  return {
-    paths: moviePaths,
-    fallback: false
+  } catch (error) {
+    console.log(error.message)
   }
 }
 
 export async function getStaticProps(context) {
-  const id = context.params.showsdetail;
-  const mov = await Axios.get(`https://api.themoviedb.org/3/tv/${id}?api_key=${process.env.PRIVATE_KEY}&language=en-US`) 
-  const response = await mov.data
-
-  return {
-    props: {showsDetail: response}
+  try {
+    const id = context.params.showsdetail;
+    const mov = await Axios.get(`https://api.themoviedb.org/3/tv/${id}?api_key=${process.env.PRIVATE_KEY}&language=en-US`) 
+    const response = await mov.data
+  
+    return {
+      props: {showsDetail: response}
+    }
+  } catch (error) {
+    console.log(error.message)
   }
 }

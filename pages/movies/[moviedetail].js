@@ -21,26 +21,34 @@ const MovieDetail = ({movDetail}) => {
 export default MovieDetail;
 
 export async function getStaticPaths() { 
-  const muv = await Axios.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=${process.env.PRIVATE_KEY}&language=en-US&page=1`)
-  const res = await muv.data.results
-
-  const moviePaths = res.map(movie => {
-    return {
-      params: {moviedetail: movie.id.toString()}
-    }
-  })
-  return {
-    paths: moviePaths,
-    fallback: false
+  try {
+    const muv = await Axios.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=${process.env.PRIVATE_KEY}&language=en-US&page=1`)
+    const res = await muv.data.results
+    const moviePaths = res.map(movie => {
+      return {
+        params: {moviedetail: movie.id.toString()}
+      }
+    })
+      return {
+        paths: moviePaths,
+        fallback: false
+      }
+  } catch (error) {
+    console.log(error.message)
   }
 }
 
 export async function getStaticProps(context) {
-  const id = context.params.moviedetail;
-  const mov = await Axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.PRIVATE_KEY}&language=en-US`) 
-  const response = await mov.data
-
-  return {
-    props: {movDetail: response}
+  try {
+    const id = context.params.moviedetail;
+    const mov = await Axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.PRIVATE_KEY}&language=en-US`) 
+    const response = await mov.data
+  
+    return {
+      props: {movDetail: response}
+    }
+    
+  } catch (error) {
+    console.log(error.message)
   }
 }
