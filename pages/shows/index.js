@@ -15,7 +15,7 @@ export default function Shows ({Data}) {
         <Text fontSize='16px' color='#BEB7FB'>Flix</Text>
         <Heading fontSize='64px' fontWeight='600' color='#EBEEF5'>  TV Shows </Heading>
 
-        <InputGroup mt='24px' w='346px' >
+        <InputGroup mt='24px' w={['','','346px']} >
           <InputLeftElement
             pt='20px' 
           children={<RiSearch2Line color='#475069'  fontSize='24px' />}/>
