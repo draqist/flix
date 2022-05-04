@@ -61,8 +61,7 @@ const Navbar = () => {
       <Box d= {['block','block','none']}>
         <Menu size='lg' >
           <MenuButton
-            activeBorderColor='transparent'
-            outline='0px'
+
             as={IconButton}
             aria-label='Options'
             variant='unstyled'
