@@ -4,11 +4,18 @@ import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
 import Axios from 'axios'
 import NextLink from 'next/link';
+import { useState } from 'react';
 
 
 
 export default function Home({ movieData, showsData, allData }) {
-  
+  const [all, setAll] = useState(allData);  
+  const [val, setVal] = useState("");
+  async function searchFetch() {
+    const actorSearch = await Axios.get(`https://api.themoviedb.org/3/search/person?api_key=98750334fac1aaa94aca2b7a98d59728&language=en-US&query=${val}&page=1&include_adult=false`)
+    const actorSearchRes = await actorSearch.data.results
+    setActors(actorSearchRes)
+  }
   /* This line would have ben the code without SSR in Nextjs */
   // const [movies, setMovies] = useState([]);
   // useEffect(() => { 

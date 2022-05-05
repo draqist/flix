@@ -5,9 +5,18 @@ import Navbar from "../../components/Navbar"
 import Axios from 'axios'
 import Card from "../../components/Card"
 import NextLink from "next/link";
+import { useState } from "react";
 
 
-export default function Shows ({Data}) {
+export default function Shows({ Data }) {
+  const [shows, setShows] = useState(Data);
+  const [showsval, setShowsVal] = useState("");
+
+  async function searchFetch() {
+    const showsSearch = await Axios.get(`https://api.themoviedb.org/3/search/tv?api_key=98750334fac1aaa94aca2b7a98d59728&language=en-US&query=${showsval}&page=1&include_adult=false`)
+    const showsSearchRes = await showsSearch.data.results
+    setShows(showsSearchRes)
+  }
   return (
     <Box bgImage='url("Background.svg")' w='100%' bgColor='#121829'>
       <Navbar />
@@ -23,6 +32,11 @@ export default function Shows ({Data}) {
             _hover={{
               borderColor:'#323B54'
             }}
+            onChange={(e) => {
+              setShowsVal(e.target.value);
+              searchFetch();
+            }}
+            value={showsval}
             _placeholder={{color:'#475069', fontSize:'16px', fontWeight: '400' }}
             border='1px solid #323B54'
             bg='#0000001A'
@@ -33,11 +47,11 @@ export default function Shows ({Data}) {
       <Box px={['20px','20px','70px']} w='100%' mt='48px' pb='28px'>
       <Flex justifyContent='space-between' alignItems='center'>
           <Text fontSize='24px' color='#ebeef5' fontWeight='600'> Now Airing</Text>
-          <Text  fontSize='18px' color='#9C92F8'> { `(${Data.length}) Shows`}</Text>
+          <Text  fontSize='18px' color='#9C92F8'> { `(${shows.length}) Shows`}</Text>
         </Flex>
         <Flex wrap='wrap' justifyContent={['center','center','space-between']} alignItems='center'>
           {
-            Data.map((data) => (
+            shows.map((data) => (
               <NextLink key={data.id.toString()} href={'/shows/' + data.id} passHref>
                 <Link >
                   <Card key={data.id.toString()} poster={data.poster_path} rating={data.vote_average} title={data.title || data.name} />

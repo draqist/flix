@@ -4,7 +4,8 @@ import Banner from "../../components/Banner";
 import Details from "../../components/Details";
 import Navbar from "../../components/Navbar";
 
-const MovieDetail = ({movDetail}) => {
+const MovieDetail = ({ movDetail }) => {
+  
   return ( 
     <Box bgColor='#121829' bgImage='url("Background.svg")'>
       <Navbar />

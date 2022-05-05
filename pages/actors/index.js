@@ -7,9 +7,17 @@ import { RiSearch2Line } from 'react-icons/ri';
 import Navbar from '../../components/Navbar';
 import Axios from 'axios';
 import Card from '../../components/Card';
+import { useState } from 'react';
 
 
-export default function Shows({Data}) {
+export default function Actors ({ Data }) {
+  const [actors, setActors] = useState(Data);
+  const [val, setVal] = useState("");
+  async function searchFetch() {
+    const actorSearch = await Axios.get(`https://api.themoviedb.org/3/search/person?api_key=98750334fac1aaa94aca2b7a98d59728&language=en-US&query=${val}&page=1&include_adult=false`)
+    const actorSearchRes = await actorSearch.data.results
+    setActors(actorSearchRes)
+  }
   return (
     <Box bgImage='url("Background.svg")' w='100%' bgColor='#121829'>
       <Navbar />
@@ -25,6 +33,11 @@ export default function Shows({Data}) {
             _hover={{
               borderColor:'#323B54'
             }}
+            onChange={(e) => {
+              setVal(e.target.value);
+              searchFetch()
+            }}
+            value={val}
             _placeholder={{color:'#475069', fontSize:'16px', fontWeight: '400' }}
             border='1px solid #323B54'
             bg='#0000001A'
@@ -35,11 +48,11 @@ export default function Shows({Data}) {
       <Box px={['20px','20px','70px']} w='100%' mt='48px' pb='28px'>
       <Flex justifyContent='space-between' alignItems='center'>
           <Text fontSize='24px' color='#ebeef5' fontWeight='600'> Popular Actors </Text>
-          <Text  fontSize='18px' color='#9C92F8'> { `(${Data.length}) Actors`}</Text>
+          <Text  fontSize='18px' color='#9C92F8'> { `(${actors.length}) Actors`}</Text>
         </Flex>
         <Flex wrap='wrap' justifyContent={['center','center','space-between']} alignItems='center'>
           {
-            Data.map((data) => <Card key={data.id.toString()} poster={data.poster_path || data.profile_path} rating= {data.vote_average || Math.round(data.popularity/10)} title={ data.title || data.name }/>)}
+            actors.map((data) => <Card key={data.id.toString()} poster={data.poster_path || data.profile_path} rating= {data.vote_average || Math.round(data.popularity/10)} title={ data.title || data.name }/>)}
         </Flex>
       </Box>
     </Box>
