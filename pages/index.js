@@ -7,7 +7,6 @@ import Axios from 'axios'
 import NextLink from 'next/link';
 import { useState } from 'react';
 import { RiSearch2Line } from 'react-icons/ri'
-import '../styles/global.css'
 
 
 export default function Home({ movieData, showsData, allData }) {
