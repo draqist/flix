@@ -1,3 +1,4 @@
+/*eslint-disable react/no-unescaped-entities, react/no-children-prop*/
 import { Box, Flex, Tab, TabList, Link,TabPanel,Heading, TabPanels, Tabs, Text, InputGroup, InputLeftElement, Input,Modal,ModalOverlay, ModalContent, ModalBody, ModalHeader, ModalFooter, useDisclosure, Image, } from '@chakra-ui/react';
 import Card from "../components/Card";
 import Hero from "../components/Hero";
@@ -6,7 +7,7 @@ import Axios from 'axios'
 import NextLink from 'next/link';
 import { useState } from 'react';
 import { RiSearch2Line } from 'react-icons/ri'
-
+import '../styles/global.css'
 
 
 export default function Home({ movieData, showsData, allData }) {
