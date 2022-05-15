@@ -1,11 +1,11 @@
 /*eslint-disable react/no-children-prop */
-import { Box, Flex, Heading, Link, Input, InputGroup, InputLeftElement, Text, Button } from "@chakra-ui/react"
+import { Box, Flex, Heading, Link, Input, InputGroup, InputLeftElement,Image, Text, Button } from "@chakra-ui/react"
 import { RiSearch2Line } from "react-icons/ri"
 import Navbar from "../../components/Navbar"
 import Axios from 'axios'
 import Card from "../../components/Card"
 import { useState } from "react";
-// import Link from "next/link";
+import NextLink from "next/link";
 
 
 export default function Movies({ Data }) {
@@ -60,11 +60,21 @@ export default function Movies({ Data }) {
         <Flex wrap={['wrap']} justifyContent={['center','center','space-between']} alignItems='center'>
           {
             movies.map((data) => (
-              <Link key={data.id.toString()} href={'/movies/' +data.id} passHref>
-                <Card key={data.id.toString()} poster={data.poster_path} rating={data.vote_average} title={data.title || data.name} />
-              </Link>
+              <NextLink key={data.id.toString()} href={'/movies/' +data.id} passHref>
+                <Link >
+                  <Card key={data.id.toString()} poster={data.poster_path} rating={data.vote_average} title={data.title || data.name} />
+                </Link>
+              </NextLink>
             ))}
         </Flex>
+      </Box>
+      <Box bg='#121829CC' py={['40px','40px','40px']} mt='20px'>
+        <Box px={['24px', '24px', '120px']} textAlign='center'>
+          <Flex w='100%' justifyContent='center' alignItems='center' my='10px'>
+            <Image alt='some image' src='/logo.svg' />
+          </Flex>
+          <Text color='#767e94;'> A personal project created by <Link href='https://draq.vercel.app' fontWeight='800' passHref color='#9C92F8' isExternal> Abdullah Abdulfatah </Link>. Source Code available on <Link href='https://github.com/Draqode/flix' fontWeight='800' passHref color='#9C92F8' isExternal> Github</Link>and designed by <Link color='#9C92F8' fontWeight='800' href='https://pramodpoudel.com.np/' isExternal> Pramod Poudel </Link></Text>
+        </Box>
       </Box>
     </Box>
   )

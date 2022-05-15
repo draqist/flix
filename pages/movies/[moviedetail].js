@@ -7,13 +7,21 @@ import Navbar from "../../components/Navbar";
 const MovieDetail = ({ movDetail }) => {
   
   return ( 
-    <Box bgColor='#121829' bgImage='url("Background.svg")'>
+    <Box bgImage='url("Background.svg")' bgColor='#121829'>
       <Navbar />
       <Box px={['20px', '20px', '70px']} pt='60px'>
         <Box w='100%' h={['', '', '', '', '480px']} my={['20px','20px','40px']}>
           <Banner title={movDetail.original_title} bck={movDetail.backdrop_path} />
         </Box>
         <Details type='Movie' tagline={movDetail.tagline} poster={movDetail.poster_path} overview={movDetail.overview} vote_average={movDetail.vote_average} release_date={movDetail.release_date} genres={movDetail.genres} runtime={ movDetail.runtime}/>
+      </Box>
+      <Box bg='#121829CC' py={['40px','40px','40px']} mt='20px'>
+        <Box px={['24px', '24px', '120px']} textAlign='center'>
+          <Flex w='100%' justifyContent='center' alignItems='center' my='10px'>
+            <Image alt='some image' src='/logo.svg' />
+          </Flex>
+          <Text color='#767e94;'> A personal project created by <Link href='https://draq.vercel.app' fontWeight='800' color='#9C92F8' isExternal> Abdullah Abdulfatah </Link>. Source Code available on <Link href='https://github.com/Draqode/flix' fontWeight='800' passHref color='#9C92F8' isExternal> Github</Link>and designed by <Link color='#9C92F8' fontWeight='800' href='https://pramodpoudel.com.np/' isExternal> Pramod Poudel </Link></Text>
+        </Box>
       </Box>
     </Box>
   );

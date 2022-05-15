@@ -1,4 +1,4 @@
-import { Box, Flex, Tab, TabList, Link,TabPanel,Heading, TabPanels, Tabs, Text, InputGroup, InputLeftElement, Input,Modal,ModalOverlay, ModalContent, ModalBody, ModalHeader, ModalFooter, useDisclosure, } from '@chakra-ui/react';
+import { Box, Flex, Tab, TabList, Link,TabPanel,Heading, TabPanels, Tabs, Text, InputGroup, InputLeftElement, Input,Modal,ModalOverlay, ModalContent, ModalBody, ModalHeader, ModalFooter, useDisclosure, Image, } from '@chakra-ui/react';
 import Card from "../components/Card";
 import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
@@ -14,10 +14,11 @@ export default function Home({ movieData, showsData, allData }) {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const [all, setAll] = useState(allData);  
   const [val, setVal] = useState("");
+
   async function searchFetch() {
-    const actorSearch = await Axios.get(`https://api.themoviedb.org/3/search/person?api_key=98750334fac1aaa94aca2b7a98d59728&language=en-US&query=${val}&page=1&include_adult=false`)
+    const actorSearch = await Axios.get(`https://api.themoviedb.org/3/search/multi?api_key=98750334fac1aaa94aca2b7a98d59728&language=en-US&query=${val}&page=1&include_adult=false`)
     const actorSearchRes = await actorSearch.data.results
-    setActors(actorSearchRes)
+    setAll(actorSearchRes)
   }
   /* This line would have ben the code without SSR in Nextjs */
   // const [movies, setMovies] = useState([]);
@@ -151,6 +152,14 @@ export default function Home({ movieData, showsData, allData }) {
             </TabPanel>
           </TabPanels>
         </Tabs>
+        </Box>
+      </Box>
+      <Box bg='#121829CC' py={['40px','40px','40px']} mt='20px'>
+        <Box px={['24px', '24px', '120px']} textAlign='center'>
+          <Flex w='100%' justifyContent='center' alignItems='center' my='10px'>
+            <Image alt='some image' src='/logo.svg' />
+          </Flex>
+          <Text color='#767e94;'> A personal project created by <Link href='https://draq.vercel.app' fontWeight='800' passHref color='#9C92F8' isExternal> Abdullah Abdulfatah </Link>. Source Code available on <Link href='https://github.com/Draqode/flix' fontWeight='800' passHref color='#9C92F8' isExternal> Github</Link > and designed by <Link color='#9C92F8' fontWeight='800' href='https://pramodpoudel.com.np/' isExternal> Pramod Poudel </Link></Text>
         </Box>
       </Box>
     </Box>
