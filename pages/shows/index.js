@@ -20,9 +20,11 @@ export default function Shows({ Data }) {
   return (
     <Box bgImage='url("Background.svg")' w='100%' bgColor='#121829'>
       <Navbar />
-      <Box px={['20px','20px','70px']} pt='80px'>
-        <Text fontSize='16px' color='#BEB7FB'>Flix</Text>
-        <Heading fontSize='64px' fontWeight='600' color='#EBEEF5'>  TV Shows </Heading>
+      <Box px={['20px', '20px', '50px', '50px', '70px']} pt='80px'>
+        <Box w={['', '', '500px']} pt={['20px', '20px', '50px', '50px', '120px']} pb='20px' >
+          <Text fontSize='16px' color='#BEB7FB'>Flix</Text>
+          <Heading fontSize='64px' fontWeight='600' color='#EBEEF5'>  TV Shows </Heading>
+        </Box>
 
         <InputGroup mt='24px' w={['','','346px']} >
           <InputLeftElement
@@ -44,12 +46,12 @@ export default function Shows({ Data }) {
               color='white' h='64px' placeholder='Search Movies or TV Shows' fontSize='20px' fontWeight='' borderColor='#323B54' />
           </InputGroup>
       </Box>
-      <Box px={['20px','20px','70px']} w='100%' mt='48px' pb='28px'>
+      <Box px={['20px','20px','50px','50px','70px']} w='100%' mt='48px' pb='28px'>
       <Flex justifyContent='space-between' alignItems='center'>
           <Text fontSize='24px' color='#ebeef5' fontWeight='600'> Now Airing</Text>
           <Text  fontSize='18px' color='#9C92F8'> { `(${shows.length}) Shows`}</Text>
         </Flex>
-        <Flex wrap='wrap' justifyContent={['center','center','space-between']} alignItems='center'>
+        <Flex wrap={['nowrap','nowrap','wrap','wrap','wrap']} overflow={['scroll','scroll','hidden']} justifyContent={['center','center','space-between']} alignItems='center'>
           {
             shows.map((data) => (
               <NextLink key={data.id.toString()} href={'/shows/' + data.id} passHref>
@@ -66,7 +68,7 @@ export default function Shows({ Data }) {
           <Flex w='100%' justifyContent='center' alignItems='center' my='10px'>
             <Image alt='some image' src='/logo.svg' />
           </Flex>
-          <Text color='#767e94;'> A personal project created by <Link href='https://draq.vercel.app' fontWeight='800' passHref color='#9C92F8' isExternal> Abdullah Abdulfatah </Link>. Source Code available on <Link href='https://github.com/Draqode/flix' fontWeight='800' passHref color='#9C92F8' isExternal> Github</Link>and designed by <Link color='#9C92F8' fontWeight='800' href='https://pramodpoudel.com.np/' isExternal> Pramod Poudel </Link></Text>
+          <Text color='#767e94;'> A personal project engineered by <Link href='https://draq.vercel.app' fontWeight='800' passHref color='#9C92F8' isExternal> Abdullah Abdulfatah </Link>. Source Code available on <Link href='https://github.com/Draqode/flix' fontWeight='800' passHref color='#9C92F8' isExternal> Github</Link>and designed by <Link color='#9C92F8' fontWeight='800' href='https://pramodpoudel.com.np/' isExternal> Pramod Poudel </Link></Text>
         </Box>
       </Box>
     </Box>

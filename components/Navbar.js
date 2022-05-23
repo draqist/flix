@@ -7,7 +7,7 @@ import {IoMenu} from 'react-icons/io5'
 
 const Navbar = () => {
   return (
-    <Flex zIndex='20' pos='fixed' justifyContent='space-between' alignItems='center' px={['20px','20px','70px']} w='100%' bgColor='#121829CC' h={['60px','60px','80px']}>
+    <Flex zIndex='20' pos='fixed' justifyContent='space-between' alignItems='center' px={['20px','20px','50px','50px','70px']} w='100%' bgColor='#121829CC' h={['60px','60px','80px']}>
       <Link href='/' passHref>
         <Image alt='some image' src='/logo.svg'/>
       </Link>

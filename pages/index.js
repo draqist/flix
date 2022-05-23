@@ -33,7 +33,7 @@ export default function Home({ movieData, showsData, allData }) {
   return (
     <Box bgImage='url("Background.svg")' w='100%' bgColor='#121829'>
       <Navbar />
-      <Box px={['20px','20px','70px']}>
+      <Box px={['20px','20px','50px','50px','70px']}>
         {/* <Hero /> */}
         <Box w={['','','500px']} pt={['80px','90px', '100px', '120px']} pb='20px' >
       <Heading color='#EBEEF5' fontWeight='600' fontSize='64px' textAlign={['justify', 'justify', 'left']}> Flix</Heading>
@@ -116,15 +116,17 @@ export default function Home({ movieData, showsData, allData }) {
           <TabPanels >
             <TabPanel>
               <Text fontWeight='600' fontSize='20px' color='#A8AEBF' mt='1rem'> All {`(${allData.length})`}</Text>
-              <Flex wrap='wrap' justifyContent={['center','center','space-between']} alignItems='center'>
+              <Flex w='100%'  wrap={['nowrap','nowrap','ap','wr','wrap']} overflow={['scroll','scroll','hidden']} justifyContent={['center','center','space-between']} alignItems='center'>
               {
-                allData.map((all) => <Card key={all.id.toString()} poster={all.poster_path} rating= {all.vote_average} title={ all.title || all.name }/>)
+                    allData.map((all) => <Box>
+                      <Card key={all.id.toString()} poster={all.poster_path} rating={all.vote_average} title={all.title || all.name} />
+                    </Box>)
               }
               </Flex>
             </TabPanel>
             <TabPanel>
               <Text fontSize='20px' color='#A8AEBF' mt='1rem'> Movies {`(${movieData.length})`}</Text>
-            <Flex wrap='wrap' justifyContent={['center','center','space-between']} alignItems='center'>
+            <Flex  wrap={['nowrap','nowrap','wrap','wrap','wrap']} overflow={['scroll','scroll','hidden']} justifyContent={['center','center','space-between']} alignItems='center'>
               {
                     movieData.map((movie) => (
                       <NextLink key={movie.id.toString()} href={`/movies/${movie.id}`} passHref>
@@ -138,7 +140,7 @@ export default function Home({ movieData, showsData, allData }) {
             </TabPanel>
             <TabPanel>
               <Text fontSize='20px' color='#A8AEBF' mt='1rem'> TV Shows {`(${showsData.length})`}</Text>
-            <Flex wrap='wrap' justifyContent={['center','center','space-between']} alignItems='center'>
+            <Flex  wrap={['nowrap','nowrap','wrap','wrap','wrap']} overflow={['scroll','scroll','hidden']} justifyContent={['center','center','space-between']} alignItems='center'>
               {
                     showsData.map((show) => (
                       <NextLink key={show.id.toString()} href={`/shows/${show.id}`} passHref>
@@ -159,7 +161,7 @@ export default function Home({ movieData, showsData, allData }) {
           <Flex w='100%' justifyContent='center' alignItems='center' my='10px'>
             <Image alt='some image' src='/logo.svg' />
           </Flex>
-          <Text color='#767e94;'> A personal project created by <Link href='https://draq.vercel.app' fontWeight='800' passHref color='#9C92F8' isExternal> Abdullah Abdulfatah </Link>. Source Code available on <Link href='https://github.com/Draqode/flix' fontWeight='800' passHref color='#9C92F8' isExternal> Github</Link > and designed by <Link color='#9C92F8' fontWeight='800' href='https://pramodpoudel.com.np/' isExternal> Pramod Poudel </Link></Text>
+          <Text color='#767e94;'> A personal project engineered by <Link href='https://draq.vercel.app' fontWeight='800' passHref color='#9C92F8' isExternal> Abdullah Abdulfatah </Link>. Source Code available on <Link href='https://github.com/Draqode/flix' fontWeight='800' passHref color='#9C92F8' isExternal> Github</Link > and designed by <Link color='#9C92F8' fontWeight='800' href='https://pramodpoudel.com.np/' isExternal> Pramod Poudel </Link></Text>
         </Box>
       </Box>
     </Box>
