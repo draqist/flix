@@ -53,7 +53,7 @@ export default function Shows({ Data }) {
         </Flex>
         <Flex wrap={['nowrap','nowrap','wrap','wrap','wrap']} overflow={['scroll','scroll','hidden']} justifyContent={['center','center','space-between']} alignItems='center'>
           {
-            shows.map((data) => (
+            shows.  map((data) => (
               <NextLink key={data.id.toString()} href={'/shows/' + data.id} passHref>
                 <Link >
                   <Card key={data.id.toString()} poster={data.poster_path} rating={data.vote_average} title={data.title || data.name} />
