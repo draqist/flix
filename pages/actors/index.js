@@ -62,7 +62,7 @@ export default function Actors ({ Data }) {
           <Flex w='100%' justifyContent='center' alignItems='center' my='10px'>
             <Image alt='some image' src='/logo.svg' />
           </Flex>
-          <Text color='#767e94;'> A personal project engineered by <Link href='https://draq.vercel.app' fontWeight='800' color='#9C92F8' isExternal> Abdullah Abdulfatah </Link>. Source Code available on <Link href='https://github.com/Draqode/flix' fontWeight='800' passHref color='#9C92F8' isExternal> Github</Link>and designed by <Link color='#9C92F8' fontWeight='800' href='https://pramodpoudel.com.np/' isExternal> Pramod Poudel </Link></Text>
+          <Text color='#767e94;'> A personal project engineered by <Link href='https://draq.vercel.app' fontWeight='800' color='#9C92F8' isExternal> Abdullah Abdulfatah [Draq] </Link>. Source Code available on <Link href='https://github.com/Draqode/flix' fontWeight='800' passHref color='#9C92F8' isExternal> Github</Link>and designed by <Link color='#9C92F8' fontWeight='800' href='https://pramodpoudel.com.np/' isExternal> Pramod Poudel </Link></Text>
         </Box>
       </Box>
     </Box>

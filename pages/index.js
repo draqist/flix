@@ -78,7 +78,8 @@ export default function Home({ movieData, showsData, allData }) {
     </Box>
         <Box mt='60px' >
           <Tabs
-            variant='unstyled'>
+            variant='unstyled'
+          w='100%'>
           <TabList bg='#00000033' justifyContent='space-between' borderRadius='12px' color='#8E95A9' w={['100%','100%','368px']} p='8px'>
               <Tab
                 w='85px'
@@ -116,11 +117,10 @@ export default function Home({ movieData, showsData, allData }) {
           <TabPanels >
             <TabPanel>
               <Text fontWeight='600' fontSize='20px' color='#A8AEBF' mt='1rem'> All {`(${allData.length})`}</Text>
-              <Flex w='100%'  wrap={['nowrap','nowrap','ap','wr','wrap']} overflow={['scroll','scroll','hidden']} justifyContent={['center','center','space-between']} alignItems='center'>
+              <Flex  wrap={['nowrap','nowrap','wrap','wrap','wrap']} overflow={['scroll','scroll','hidden']}   justifyContent={['center','center','space-between']} alignItems='center'>
               {
-                    allData.map((all) => <Box>
-                      <Card key={all.id.toString()} poster={all.poster_path} rating={all.vote_average} title={all.title || all.name} />
-                    </Box>)
+                    allData.map((all) => 
+                      <Card key={all.id.toString()} poster={all.poster_path} rating={all.vote_average} title={all.title || all.name} />)
               }
               </Flex>
             </TabPanel>
@@ -129,7 +129,7 @@ export default function Home({ movieData, showsData, allData }) {
             <Flex  wrap={['nowrap','nowrap','wrap','wrap','wrap']} overflow={['scroll','scroll','hidden']} justifyContent={['center','center','space-between']} alignItems='center'>
               {
                     movieData.map((movie) => (
-                      <NextLink key={movie.id.toString()} href={`/movies/${movie.id}`} passHref>
+                      <NextLink key={movie.id.toString()} href={`/movies/${movie.id}`} passhref>
                         <Link>
                           <Card key={movie.id.toString()} poster={movie.poster_path} rating= {movie.vote_average} title={ movie.title || movie.name }/>    
                         </Link>
@@ -143,7 +143,7 @@ export default function Home({ movieData, showsData, allData }) {
             <Flex  wrap={['nowrap','nowrap','wrap','wrap','wrap']} overflow={['scroll','scroll','hidden']} justifyContent={['center','center','space-between']} alignItems='center'>
               {
                     showsData.map((show) => (
-                      <NextLink key={show.id.toString()} href={`/shows/${show.id}`} passHref>
+                      <NextLink key={show.id.toString()} href={`/shows/${show.id}`} passhref>
                         <Link >
                           <Card key={show.id.toString()} rating={show.vote_average} poster={show.poster_path} title={show.title || show.name} />
                         </Link>
@@ -161,7 +161,7 @@ export default function Home({ movieData, showsData, allData }) {
           <Flex w='100%' justifyContent='center' alignItems='center' my='10px'>
             <Image alt='some image' src='/logo.svg' />
           </Flex>
-          <Text color='#767e94;'> A personal project engineered by <Link href='https://draq.vercel.app' fontWeight='800' passHref color='#9C92F8' isExternal> Abdullah Abdulfatah </Link>. Source Code available on <Link href='https://github.com/Draqode/flix' fontWeight='800' passHref color='#9C92F8' isExternal> Github</Link > and designed by <Link color='#9C92F8' fontWeight='800' href='https://pramodpoudel.com.np/' isExternal> Pramod Poudel </Link></Text>
+          <Text color='#767e94;'> A personal project engineered by <Link href='https://draq.vercel.app' fontWeight='800' passhref color='#9C92F8' isExternal> Abdullah Abdulfatah [Draq] </Link>. Source Code available on <Link href='https://github.com/Draqode/flix' fontWeight='800' passhref color='#9C92F8' isExternal> Github</Link > and designed by <Link color='#9C92F8' fontWeight='800' href='https://pramodpoudel.com.np/' isExternal> Pramod Poudel </Link></Text>
         </Box>
       </Box>
     </Box>

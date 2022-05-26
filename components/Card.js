@@ -5,7 +5,7 @@ import {motion} from 'framer-motion'
 
 const Card = ({poster, title, rating}) => {
   return (
-    <Box w='100%' pos='relative' mx={['10px','10px', '0']}>
+    <Box pos='relative' mx={['10px','10px', '0']}>
         <Box as ={motion.div} initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }} whileTap={{scale: 0.7, transition: '0.5s linear'}} transition ='1s linear' bgColor='#20283ECC'  borderRadius='12px' p='8px' minHeight='480px' w='282px'  mt='24px' >

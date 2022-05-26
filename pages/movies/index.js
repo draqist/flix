@@ -6,19 +6,29 @@ import Axios from 'axios'
 import Card from "../../components/Card"
 import { useState } from "react";
 import NextLink from "next/link";
+import NextCard from "../../components/NextCard";
 
 
 export default function Movies({ Data }) {
+  // let movies  = [...Data]
   const [movies, setMovies] = useState(Data);
   const [val, setVal] = useState("");
   const [fade, setFade] = useState(false);
+  const [nextVal, setNext] = useState(2)
+
+  // let newarr = []
 
   async function searchFetch() {
     const movSearch = await Axios.get(`https://api.themoviedb.org/3/search/movie?api_key=98750334fac1aaa94aca2b7a98d59728&language=en-US&query=${val}&page=1&include_adult=false`)
     const movSearchRes = await movSearch.data.results
-    setMovies(movSearchRes)
+    movies = movSearchRes
   }
 
+  const More = async () => {
+    setNext(nextVal + 1)
+    const nextSearch = await Axios.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=98750334fac1aaa94aca2b7a98d59728&language=en-US&page=${nextVal}`)
+    const res = await nextSearch.data.results
+  }
   return (
     <Box bgImage='url("Background.svg")' w='100%' bgColor='#121829'>
       <Navbar />
@@ -68,6 +78,7 @@ export default function Movies({ Data }) {
                 </Link>
               </NextLink>
             ))}
+          <NextCard OnClick={ More }/>
         </Flex>
       </Box>
       <Box bg='#121829CC' py={['40px','40px','40px']} mt='20px'>
@@ -75,7 +86,7 @@ export default function Movies({ Data }) {
           <Flex w='100%' justifyContent='center' alignItems='center' my='10px'>
             <Image alt='some image' src='/logo.svg' />
           </Flex>
-          <Text color='#767e94;'> A personal project engineered by <Link href='https://draq.vercel.app' fontWeight='800' passHref color='#9C92F8' isExternal> Abdullah Abdulfatah </Link>. Source Code available on <Link href='https://github.com/Draqode/flix' fontWeight='800' passHref color='#9C92F8' isExternal> Github</Link>and designed by <Link color='#9C92F8' fontWeight='800' href='https://pramodpoudel.com.np/' isExternal> Pramod Poudel </Link></Text>
+          <Text color='#767e94;'> A personal project engineered by <Link href='https://draq.vercel.app' fontWeight='800' passHref color='#9C92F8' isExternal> Abdullah Abdulfatah [Draq] </Link>. Source Code available on <Link href='https://github.com/Draqode/flix' fontWeight='800' passHref color='#9C92F8' isExternal> Github</Link>and designed by <Link color='#9C92F8' fontWeight='800' href='https://pramodpoudel.com.np/' isExternal> Pramod Poudel </Link></Text>
         </Box>
       </Box>
     </Box>
