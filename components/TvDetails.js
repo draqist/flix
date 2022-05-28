@@ -1,14 +1,15 @@
 import { Box, Flex, Grid, GridItem, Heading, Image, Tag, TagLabel, TagLeftIcon, Text } from "@chakra-ui/react";
 import { AiOutlineStar } from "react-icons/ai";
+import {motion} from 'framer-motion'
 
 
 const TvDetails = ({ lastdate, noSeasons, status,tagline, poster, overview, vote_average, release_date, type,genres, runtime }) => {
   return ( 
     <Flex alignItems='flex-start' pt={['0px','0px','','0px','120px']} pb='40px' direction={['column-reverse','column-reverse','unset']} px={['','','','0px','90px']} gap={['0px','0px','80px']} >
-          <Box w={['','','','','480px']} mt={['20px','20px','0']} h={['','','','','720px']}>
+          <Box w={['','','','','480px']} mt={['20px','20px','0']} h={['','','','','720px']} as={motion.div} initial={{ opacity: 0, x: -60 }} whileInView={{ opacity: 1, x: 0, transition: {duration:  1}}} viewport={{ once: true }}>
             <Image src={'https://image.tmdb.org/t/p/w500/' + poster } w='inherit' alt='' borderRadius='24px' />
           </Box>
-          <Box w={['','','480px']}>
+          <Box w={['','','480px']} as={motion.div} initial={{ opacity: 0, x: 60 }} whileInView={{ opacity: 1, x: 0, transition: {duration: 1, delay: .25}}} viewport={{ once: true }}>
               <Heading fontSize='24px' fontWeight='700' letterSpacing='-1.5%' color='#EBEEF5' mb='24px'>{ tagline }</Heading>
             <Box h=''>
               <Text fontSize={['14px','14px','20px']} color='#8E95A9' fontWeight='400'>{overview}</Text>

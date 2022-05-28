@@ -16,12 +16,11 @@ export default function Movies({ Data }) {
   const [fade, setFade] = useState(false);
   const [nextVal, setNext] = useState(2)
 
-  // let newarr = []
 
   async function searchFetch() {
     const movSearch = await Axios.get(`https://api.themoviedb.org/3/search/movie?api_key=98750334fac1aaa94aca2b7a98d59728&language=en-US&query=${val}&page=1&include_adult=false`)
     const movSearchRes = await movSearch.data.results
-    movies = movSearchRes
+    setMovies(movSearchRes)
   }
 
   const More = async () => {
